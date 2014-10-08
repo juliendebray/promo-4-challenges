@@ -14,18 +14,16 @@ def old_roman_numeral(an_integer)
   return repeat("M",mille[0]) + repeat("D",cinq_ct[0]) + repeat("C",cent[0]) + repeat("L",cqte[0]) + repeat("X",dix[0]) + repeat("V", cinq[0]) + repeat("I", un)
 end
 
-puts "1 = " + old_roman_numeral(1)
-puts "4 = " + old_roman_numeral(4)
-puts "5 = " + old_roman_numeral(5)
-puts "8 = " + old_roman_numeral(8)
-puts "10 = " + old_roman_numeral(10)
-puts "17 = " + old_roman_numeral(17)
-puts "54 = " + old_roman_numeral(54)
-puts "985 = " + old_roman_numeral(985)
 
 def new_roman_numeral(an_integer)
   # TODO: translate integer in roman number - modern-style way
+  number = old_roman_numeral(an_integer)
+  number.gsub!("DCCCC", "CM") if number.gsub("DCCCC", "CM") != nil
+  number.gsub!("LXXXX", "XC") if number.gsub("LXXXX", "XC") != nil
+  number.gsub!("VIIII", "IX") if number.gsub("VIIII", "IX") != nil
+  number.gsub!("CCCC", "CD") if number.gsub("CCCC", "CD") != nil
+  number.gsub!("XXXX", "XL") if number.gsub("XXXX", "XL") != nil
+  number.gsub!("IIII", "IV") if number.gsub("IIII", "IV") != nil
+  number
 end
-
-
 
