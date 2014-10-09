@@ -26,7 +26,7 @@ puts tab
 l = tab.length
 puts l
 i = 0
-for k in (0..l-1)
+for k in (0..l-1) do
   puts "k = #{k}"
   until !(alea.include?(i))
   i = rand(0..l-1)
