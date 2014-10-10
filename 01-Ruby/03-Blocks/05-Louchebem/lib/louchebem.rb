@@ -50,3 +50,6 @@ def louchebemize(sentence)
   a = translate.join(" ")
   a.gsub(" !","!").gsub(" ?","?").gsub(" .",".").gsub(" ' ","'").gsub(" ,",",")
 end
+
+
+puts louchebemize("chat, atout, bonjour! Hello?")
