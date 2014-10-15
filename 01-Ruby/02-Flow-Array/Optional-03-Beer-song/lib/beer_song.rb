@@ -18,17 +18,18 @@ Take one down, pass it around, no more bottles of beer on the wall!"
 1 bottle of beer on the wall, 1 bottle of beer!\n\
 Take one down, pass it around, no more bottles of beer on the wall!"
   end
+  return song
 end
 
 
-puts beer_song(1)
-puts " "
+# puts beer_song(1)
+# puts " "
 
-puts beer_song(2)
-puts " "
+# puts beer_song(2)
+# puts " "
 
-puts beer_song(3)
-puts " "
+# puts beer_song(3)
+# puts " "
 
-puts beer_song(4)
-puts " "
+# puts beer_song(4)
+# puts " "
