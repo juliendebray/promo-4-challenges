@@ -68,13 +68,13 @@ describe Cookbook do
   describe '#remove_recipe' do
     it 'should remove a recipe from the cookbook' do
       size_before = @cookbook.recipes.length
-      @cookbook.remove_recipe(0)
+      @cookbook.remove_recipe("Crumpets")
       expect(@cookbook.recipes.length).to eq (size_before - 1)
     end
 
     it 'should remove the recipe from the CSV' do
       size_before = @cookbook.recipes.length
-      @cookbook.remove_recipe(0)
+      @cookbook.remove_recipe("Crumpets")
 
       # Reload from CSV
       new_cookbook = Cookbook.new(csv_path)
