@@ -24,12 +24,14 @@ Start with the slides
 There are other classical structures we use a lot in programming
 
 **Stack ("pile" in french)**
+
 - LIFO stucture: "Last In First Out"
 - `push` => append element at the end of the array
 - `pop` => delete **last** elements and return it
 - Well, `Array` is already a LIFO.
 
 **Queue**
+
 - FIFO structure: "First In First Out"
 - `push` => append element at the end of the array
 - `pop` => delete **first** elements and return it
@@ -39,14 +41,14 @@ There are **queues** everywhere in programs. If **A** wants to transfer tasks to
 #### TODO manager
 We'll code this software together and interactively. **Herebelow we describe a good way to articulate the live-code and discussion with the class**
 
-##### Whiteboard Brainstorm
+#### Whiteboard Brainstorm
 
 What classes do we need for this program ?
 - task, list, file (**data**)
 - **display** tasks
 - how do you make data & display communicate? **controller** => chief orchestra who has methods for the app logic, add / delete / mark tasks.
 
-##### Data
+#### Data
 What do we start with? display, interface, controller? Let's start with data. It's the heart of our todo-app.
 
 ```ruby
@@ -75,7 +77,7 @@ class TaskRepository
 end
 ```
 
-##### Controller
+#### Controller
 The controller is the chief conductor ("chef d'orchestre"). He will get user input through the display, update tasks in the repository, and output results through the display. He needs to manipulate both the display and the repository.
 
 ```ruby
@@ -94,7 +96,8 @@ end
 ```
 How do we deal with 1)? No `gets.chomp` in the controller! this is interface responsibility.
 
-##### Display
+#### Display
+
 ```ruby
 # display.rb
 class Dipslay
@@ -108,7 +111,7 @@ end
 
 Now we can complete 1) in the controller
 
-```
+```ruby
 # controller.rb
 class Controller
   def initialize(task_repository, display)
@@ -149,7 +152,7 @@ class Dipslay
 end
 ```
 
-##### The Glue
+#### The Glue
 
 Let's code the `app.rb` file that we will launch from terminal to start our todo-app.
 
@@ -200,8 +203,6 @@ $ git pull --no-edit upstream master
 
 - Make a brief overview of the roadmap of the day with them, explaining the general idea behind each challenge.
 
-The
-
 ### Live-code
 
 #### General guidelines
@@ -212,4 +213,4 @@ The
 - At the end of the live-code, ensure every `git status` is clean in the class! To make the work of your buddy-teacher easier tomorrow :)
 
 #### Live-code details
-No live-code, we will correct to Cookbook on Monday evening.
+No live-code on Friday, we will correct to Cookbook on Monday evening.
