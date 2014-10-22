@@ -32,7 +32,6 @@ require_relative "authentification_service"
 require_relative "router"
 
 
-
 router = Router.new
 router.run
 

@@ -1,7 +1,7 @@
 class AuthentificationService
 
   def login(username, password) #should return the user loged or nil
-    repo = EmployeeRepository.new
+    repo = EmployeesRepository.new
     return repo.find_user_by_name(username)
   end
 

@@ -2,7 +2,7 @@ class OrdersRepository
   attr_reader :orders
 
   def initialize
-    @orders = []
+    @orders = [Order.new(["coca", "frites"], 10, 0, 0), Order.new(["sprite", "choco"], 8, 0, 0)]
   end
 
   def add_order(new_order)

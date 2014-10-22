@@ -2,7 +2,7 @@ require_relative 'controllers/restaurant_controller'
 
 class Router
   def initialize
-    @restaurant_controller = RestaurantController.new("Restaurant de test")
+    @restaurant_controller = RestaurantController.new
     @authentification_service = AuthentificationService.new
     @customers_controller = CustomersController.new
     @employees_controller = EmployeesController.new
@@ -21,12 +21,12 @@ class Router
     print ">"
     password =  gets.chomp
 
-    user = authentification_service.login(username, password)
+    user = @authentification_service.login(username, password)
     if user.nil?
       puts "No username found"
     else
-      user_logged = authentification_service.password(user, password)
-      if userlogged.nil?
+      user_logged = @authentification_service.password(user, password)
+      if user_logged.nil?
         puts "Wrong password"
       else
         if user_logged.status == "manager"

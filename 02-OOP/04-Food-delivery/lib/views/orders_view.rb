@@ -2,13 +2,13 @@ class OrdersView
  def list_orders_to_user(orders)
     puts "Here are your orders:"
     orders.each_with_index do |order, index|
-      puts "#{index} - #{order.status} - #{order.total_price}"
+      puts "#{index} - #{order.delivered} - #{order.total_price}"
     end
   end
 
   def ask_user_to_compose_an_order
     puts "Splecify order to add:"
-    meals = ask_sht("meals (use array)").to_a
+    meals = ask_sht("meals (use array)")
     total_price = ask_sht("total").to_f
     delivery_guy = ask_sht("delivery_guy id").to_i
     customer = ask_sht("customer id").to_i
