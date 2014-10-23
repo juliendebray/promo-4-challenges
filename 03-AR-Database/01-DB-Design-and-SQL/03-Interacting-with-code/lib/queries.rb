@@ -10,19 +10,19 @@ def sorted_artists(db)
   # TODO: return array of artists' names sorted alphabetically
   tab = db.execute("SELECT name FROM artists
                     ORDER BY name ASC;")
-  tab.flatten
+  tab.map { |row| row["name"] }
 end
 
 def love_tracks(db)
   # TODO: return array of love songs
   tab = db.execute("SELECT name FROM tracks
                    WHERE name LIKE '%love%';")
-  tab.flatten
+  tab.map { |row| row["name"] }
 end
 
 def long_tracks(db, min_length)
   # TODO: return tracks verifying: duration > min_length (minutes)
   tab = db.execute("SELECT name FROM tracks
-                    WHERE milliseconds > #{min_length * 60000};")
-  tab.flatten
+                    WHERE milliseconds > #{min_length * 60_000};")
+  tab.map { |row| row["name"] }
 end
