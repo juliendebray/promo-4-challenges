@@ -1,7 +1,12 @@
+
 class OrdersController
-  def initialize
+  attr_reader :customers_repository, :orders_view
+  def initialize #(meals_repository, customers_repository, employees_repository) # Pass repo as argument to controller
     @orders_repository = OrdersRepository.new
     @orders_view = OrdersView.new
+    @meals_repository = MealsRepository.new
+    @customers_repository = CustomersRepository.new
+    @employees_repository = EmployeesRepository.new
   end
 
   def list_orders
@@ -9,9 +14,20 @@ class OrdersController
   end
 
   def add_order
-    new_order_tab = @orders_view.ask_user_to_compose_an_order
-    new_order = Order.new(new_order_tab[0], new_order_tab[1], new_order_tab[2], new_order_tab[3])
+    customer_id = @orders_view.ask_user_customer_id(@customers_repository.customers)
+    meals_id = []
+    answer = 1
+    while answer > 0
+      answer = @orders_view.ask_user_to_compose_an_order(@meals_repository.meals)
+      meals_id << answer unless answer == 0
+    end
+    p meals_id
+    meals = []
+    meals_id.each { |index| meals << @meals_repository.meals[index] }
+    employee_id = @orders_view.ask_user_employee_id(@employees_repository.employees)
+    new_order = Order.new(meals, @employees_repository.employees[employee_id], @customers_repository.customers[customer_id])
     @orders_repository.add_order(new_order)
+    @orders_view.print_confirmation(new_order)
   end
 
   def complete_an_order

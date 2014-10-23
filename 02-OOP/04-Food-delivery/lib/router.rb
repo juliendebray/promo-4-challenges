@@ -6,7 +6,12 @@ class Router
     @authentification_service = AuthentificationService.new
     @customers_controller = CustomersController.new
     @employees_controller = EmployeesController.new
+    @meals_repository = MealsRepository.new # creer un controller pour l'initialiser
     @orders_controller = OrdersController.new
+    #                                           (@meals_repository,
+    #                                           @customers_controller.customers_repository,
+    #                                           @employees_controller.employees_repository)# passer en argument les repo au lieu de les recréer (changer da)
+
     @running = true
   end
 
@@ -17,14 +22,15 @@ class Router
     puts "Please enter your username:"
     print ">"
     username = gets.chomp
-    puts "Please enter your password:"
-    print ">"
-    password =  gets.chomp
 
-    user = @authentification_service.login(username, password)
+
+    user = @authentification_service.login(username)
     if user.nil?
       puts "No username found"
     else
+      puts "Please enter your password:"
+      print ">"
+      password =  gets.chomp
       user_logged = @authentification_service.password(user, password)
       if user_logged.nil?
         puts "Wrong password"

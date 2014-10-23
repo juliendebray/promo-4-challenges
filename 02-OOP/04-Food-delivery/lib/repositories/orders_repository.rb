@@ -2,7 +2,7 @@ class OrdersRepository
   attr_reader :orders
 
   def initialize
-    @orders = [Order.new(["coca", "frites"], 10, 0, 0), Order.new(["sprite", "choco"], 8, 0, 0)]
+    @orders = []
   end
 
   def add_order(new_order)
@@ -16,4 +16,5 @@ class OrdersRepository
   def remove_order(order_id)
     @orders.delete_at(order_id)
   end
+
 end

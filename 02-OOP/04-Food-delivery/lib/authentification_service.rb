@@ -1,8 +1,13 @@
+require_relative "repositories/employees_repository" #to delete if no test
+
 class AuthentificationService
 
-  def login(username, password) #should return the user loged or nil
-    repo = EmployeesRepository.new
-    return repo.find_user_by_name(username)
+  def initialize
+    @employees_repository = EmployeesRepository.new
+  end
+
+  def login(username)
+    return @employees_repository.find_user_by_name(username)
   end
 
   def password(user, password)
@@ -13,3 +18,9 @@ class AuthentificationService
     end
    end
 end
+
+# test = AuthentificationService.new
+# user = test.login("jul")
+# p user.name
+# p user.password
+# p test.password(user, "jul")
