@@ -12,10 +12,9 @@ def stats_on(db, genre_name)
   tab = db.execute("SELECT COUNT(*), AVG(milliseconds) FROM tracks tr
                     JOIN genres g ON tr.genre_id = g.id
                     WHERE g.name = '#{genre_name}';")
-  return {
-            category: genre_name,
-            number_of_songs: tab[0][0],
-            avg_length: (tab[0][1] / 60_000).round(2)
+  return { category: genre_name,
+           number_of_songs: tab[0][0],
+           avg_length: (tab[0][1] / 60_000).round(2)
           }
 end
 
@@ -29,6 +28,7 @@ def top_five_artists(db, genre_name)
                     WHERE g.name = '#{genre_name}'
                     GROUP BY alb.artist_id
                     ORDER BY c DESC
+                    LIMIT 5
                     ;")
-  return tab[0..4]
+  return tab
 end
