@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :name
       t.string :url
-      t.integer :votes
+      t.integer :votes, default: 0
       t.timestamps
     end
   end
