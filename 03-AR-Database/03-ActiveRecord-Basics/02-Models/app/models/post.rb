@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
     "#{id} - title: #{name} (#{url})\n votes: #{votes}"
   end
 
-  # def upvote
-  #   @votes += 1
-  # end
+  def upvote
+    self.votes += 1
+  end
 end

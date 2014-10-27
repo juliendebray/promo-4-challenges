@@ -44,8 +44,8 @@ class PostsController
     # TODO: increment the `votes` column for a post
     id = @view.ask_post_id
     post = Post.find(id)
-    post.votes += 1
-    # post.upvote
+    # post.votes += 1
+    post.upvote
     post.save
   end
 end
