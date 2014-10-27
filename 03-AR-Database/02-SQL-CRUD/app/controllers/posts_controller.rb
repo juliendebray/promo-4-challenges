@@ -22,9 +22,7 @@ class PostsController
 
   def update
     # TODO: implement updating an existing post
-    index
-    id = @view.ask_post_id
-    post = Post.find(id)
+    post = return_post
     arg = @view.ask_post_info
     post.title = arg[:title]
     post.url = arg[:url]
@@ -33,18 +31,22 @@ class PostsController
 
   def destroy
     # TODO: implement destroying a post
-    index
-    id = @view.ask_post_id
-    post = Post.find(id)
+    post = return_post
     post.destroy
   end
 
   def upvote
     # TODO: implement upvoting a post
-    index
-    id = @view.ask_post_id
-    post = Post.find(id)
+    post = return_post
     post.upvote
     post.save
+  end
+
+  private
+
+  def return_post
+    index
+    id = @view.ask_post_id
+    Post.find(id)
   end
 end
