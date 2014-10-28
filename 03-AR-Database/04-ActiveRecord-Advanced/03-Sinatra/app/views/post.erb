@@ -1,0 +1,9 @@
+<h1>Hacker News</h1>
+<h2>Post's detail</h2>
+<ul>
+    <li><%= @post.id %></li>
+    <li><%= @post.name %></li>
+    <li><a href="<%= @post.url %>"><%= @post.url %></a></li>
+    <li><%= @post.votes %></li>
+    <li><a href="<%= "/upvote?id=#{@post.id}" %>">Vote pour moi!!</a></li>
+</ul>
