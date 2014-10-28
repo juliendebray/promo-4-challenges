@@ -12,10 +12,10 @@ class User < ActiveRecord::Base
   private
 
   def lower_username
-    self.username = username.downcase unless username.nil?
+    self.username = self.username.downcase unless self.username.nil?
   end
 
   def strip_email
-    self.email = email.strip unless email.nil?
+    self.email = self.email.strip unless self.email.nil?
   end
 end
