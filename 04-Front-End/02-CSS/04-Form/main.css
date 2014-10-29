@@ -1,6 +1,57 @@
 .container {
-  margin: 0 auto;  
+  margin: 0 auto;
   width: 840px;
+  background-color: #508ce2;
 }
 
-/*Add some CSS rules to design your form */ 
+h1 {
+  text-align: center;
+  color: white;
+}
+
+form {
+  padding: 10px;
+}
+
+.btn
+{
+  background-color: #ea4a3c;
+  color: #fff;
+  border-radius: 2px;
+  border: 1px solid #DC143C;
+  transition: background-color 3000ms ease-out;
+  height: 200px
+  width: 200px;
+}
+
+.btn:hover {
+  color: purple;
+  background-color: yellow;
+  height: 400px
+  width: 400px;
+}
+
+div {
+  background-color: #508ce2;
+}
+
+.yellow {
+  background-color: yellow;
+  text-align: left;
+  transition: background-color 3000ms ease-out;
+}
+
+.yellow:hover {
+  background-color: green
+}
+
+.green {
+  background-color: green;
+  text-align: right;
+  transition: background-color 3000ms ease-out;
+}
+
+.green:hover {
+  background-color:yellow;
+}
+/*Add some CSS rules to design your form */
