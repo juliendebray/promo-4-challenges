@@ -1,0 +1,41 @@
+body {
+  background-image: url("swirl_pattern.png");
+}
+
+#header {
+  padding-top: 50px;
+  background-image: url("http://www.budsasia.com/images/slide/Header-Art-01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: 2px 1px #d4d4d4;
+  height: 630px;
+}
+
+#header-content {
+  margin-top: 200px;
+  margin-bottom: 200px;
+  border: 2px solid red;
+}
+
+
+
+.feature {
+  color: black;
+  padding-top: 50px;
+}
+
+#footer {
+  background-color: black;
+  color: white;
+  padding: 50px;
+  font-size: 15px;
+}
+
+
+#footer a {
+  color: white;
+  font-size: 40px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
