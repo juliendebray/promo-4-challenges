@@ -6,6 +6,7 @@ body {
   margin: 0 auto;
   width: 720px;
 	font-family: 'Open Sans', sans-serif;
+<<<<<<< HEAD
 }
 
 h1 {
@@ -40,4 +41,6 @@ header a {
   color: #0000ee
   text-decoration: underline;
   cursor: auto;
+=======
+>>>>>>> bc19bfe752e19fc7c17da7ddfc9168339a021716
 }
