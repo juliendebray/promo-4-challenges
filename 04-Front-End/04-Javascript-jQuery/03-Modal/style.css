@@ -1,0 +1,16 @@
+.inner {
+  position: absolute;
+  z-index: 1;
+  background: black;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+}
+
+.img-container {
+  z-index: 2;
+  position: absolute;
+  top: 10%;
+  left: 35%;
+  display: none;
+}
