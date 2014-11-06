@@ -1,0 +1,73 @@
+#new-game, #players-names, #racer_table{
+  display: none;
+}
+
+
+#new-game {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  padding-top: 10%;
+  display: none;
+}
+
+#players-names {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  padding: 15%;
+  display: none;
+}
+
+
+
+#racer_table td {
+  background-color: lightgrey;
+  height: 50px;
+  width: 100px;
+  border: 1px dotted blue;
+}
+
+#racer_table td.active {
+  background-color: black;
+}
+
+#player1_race td.active {
+  background-image: url('../img/player_1.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#player2_race td.active {
+  background-image: url('../img/player_2.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+tbody {
+  border-right: 1.5px solid red;
+}
+
+#end-game {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: blue;
+  opacity: 0.6;
+  color: black;
+  padding-top: 20%;
+  display: none;
+}
+
+#end-game p {
+  font-size: 50;
+  font-weight: 700;
+}
